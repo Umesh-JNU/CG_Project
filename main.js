@@ -19,8 +19,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 
 // skill sphere
-const texture = new THREE.TextureLoader().load('skills.jpg');
-const nor_texture = new THREE.TextureLoader().load('normal_skill.jpg');
+const texture = new THREE.TextureLoader().load('assets/skills.jpg');
+const nor_texture = new THREE.TextureLoader().load('assets/normal_skill.jpg');
 const skill_obj = new THREE.SphereGeometry(5, 32, 32);
 const skill_mat = new THREE.MeshStandardMaterial({ map: texture, normalMap: nor_texture });
 const skill = new THREE.Mesh(skill_obj, skill_mat);
@@ -62,12 +62,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('assets/space.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('jeff.png');
+const jeffTexture = new THREE.TextureLoader().load('assets/jeff.png');
 
 const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
@@ -75,8 +75,8 @@ scene.add(jeff);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('assets/moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('assets/normal.jpg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -122,10 +122,6 @@ window.addEventListener('resize', () => {
 
 function animate() {
   requestAnimationFrame(animate);
-
-  // torus.rotation.x += 0.01;
-  // torus.rotation.y += 0.005;
-  // torus.rotation.z += 0.01;
 
   moon.rotation.x += 0.005;
   skill.rotation.y -= 0.005;

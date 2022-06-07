@@ -47,13 +47,6 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-// Helpers
-
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
-
-// const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -72,7 +65,6 @@ function addStar() {
 Array(200).fill().forEach(addStar);
 
 // Background
-
 const spaceTexture = new THREE.TextureLoader().load('assets/bg1.jpg');
 scene.background = spaceTexture;
 
@@ -93,7 +85,7 @@ var skill_box = new THREE.Mesh(geom, mats);
 scene.add(skill_box);
 
 // Skill
-const skillsTexture = new THREE.TextureLoader().load('assets/skills.jpg');
+const skillsTexture = new THREE.TextureLoader().load('assets/skills.jpeg');
 
 const skills = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
